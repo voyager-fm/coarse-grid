@@ -1,0 +1,211 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-preview-surface: var(--preview-surface);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+:root {
+  --radius: 0.5rem;
+
+  /* Coarse Grid palette (derived from style.css tokens) */
+  --background: #f5f5f2;        /* --color-page */
+  --foreground: #1d2421;        /* --color-text */
+  --card: #ffffff;              /* --color-panel */
+  --card-foreground: #1d2421;
+  --popover: #ffffff;
+  --popover-foreground: #1d2421;
+  --primary: #096b4a;           /* --color-accent */
+  --primary-foreground: #ffffff;
+  --secondary: #e8ebe6;         /* --color-disabled-surface */
+  --secondary-foreground: #1d2421;
+  --muted: #e8ebe6;
+  --muted-foreground: #58615d;  /* --color-muted */
+  --accent: #e8ebe6;
+  --accent-foreground: #034d34; /* --color-accent-strong */
+  --destructive: #9b2c2c;       /* --color-error */
+  --border: #c5cbc4;            /* --color-border */
+  --input: #c5cbc4;
+  --ring: #096b4a;
+  --preview-surface: #eef1ec;   /* --color-preview-surface */
+
+  /* Extra tokens ported from style.css (used by @layer components) */
+  --border-strong: #8b958d;
+  --accent-soft: #e2f1e9;
+  --disabled-text: #66706a;
+  --disabled-surface: #e8ebe6;
+
+  /* Measure / sizing tokens from style.css */
+  --sidebar-min: 16rem;
+  --sidebar-max: 22rem;
+  --content-max: 78rem;
+  --page-min: 20rem;
+  --preview-min-height: 15rem;
+  --preview-min-height-wide: 30rem;
+  --target-size: 2.75rem;
+  --range-track-size: 0.375rem;
+  --range-thumb-size: 1.125rem;
+  --focus-width: 0.1875rem;
+  --radius-small: 0.25rem;
+  --round-full: 50%;
+  --copy-measure: 48rem;
+}
+
+.dark {
+  --background: #121715;
+  --foreground: #eef1ec;
+  --card: #1d2421;
+  --card-foreground: #eef1ec;
+  --popover: #1d2421;
+  --popover-foreground: #eef1ec;
+  --primary: #34c287;
+  --primary-foreground: #121715;
+  --secondary: #2a322e;
+  --secondary-foreground: #eef1ec;
+  --muted: #2a322e;
+  --muted-foreground: #a8b0ab;
+  --accent: #2a322e;
+  --accent-foreground: #b9f3d6;
+  --destructive: #e06c6c;
+  --border: #3a443f;
+  --input: #3a443f;
+  --ring: #34c287;
+  --preview-surface: #1a211d;
+
+  --border-strong: #5a665f;
+  --accent-soft: #16302a;
+  --disabled-text: #8b948e;
+  --disabled-surface: #2a322e;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/*
+ * Custom CSS ported from style.css that Tailwind utilities cannot express
+ * (native pseudo-elements, keyframe animations, and element-scoped rules).
+ * Kept in @layer components so they compose with Tailwind's cascade layers.
+ */
+@layer components {
+  :focus-visible {
+    outline: var(--focus-width) solid var(--ring);
+    outline-offset: 0.25rem;
+  }
+
+  input[type="range"] {
+    width: 100%;
+    min-width: 0;
+    min-height: var(--target-size);
+    margin: 0;
+    appearance: none;
+    background: transparent;
+    cursor: pointer;
+  }
+
+  input[type="range"]::-webkit-slider-runnable-track {
+    height: var(--range-track-size);
+    border: 1px solid var(--border-strong);
+    border-radius: var(--radius-small);
+    background: var(--accent-soft);
+  }
+
+  input[type="range"]::-webkit-slider-thumb {
+    width: var(--range-thumb-size);
+    height: var(--range-thumb-size);
+    margin-top: calc((var(--range-track-size) - var(--range-thumb-size)) / 2);
+    appearance: none;
+    border: 1px solid var(--accent-foreground);
+    border-radius: var(--round-full);
+    background: var(--card);
+  }
+
+  input[type="range"]::-moz-range-track {
+    height: var(--range-track-size);
+    border: 1px solid var(--border-strong);
+    border-radius: var(--radius-small);
+    background: var(--accent-soft);
+  }
+
+  input[type="range"]::-moz-range-thumb {
+    width: var(--range-thumb-size);
+    height: var(--range-thumb-size);
+    border: 1px solid var(--accent-foreground);
+    border-radius: var(--round-full);
+    background: var(--card);
+  }
+
+  input[type="range"]:disabled,
+  select:disabled,
+  input[type="color"]:disabled {
+    cursor: not-allowed;
+  }
+
+  input[type="range"]:disabled::-webkit-slider-runnable-track {
+    border-color: var(--border);
+    background: var(--disabled-surface);
+  }
+
+  input[type="range"]:disabled::-webkit-slider-thumb {
+    border-color: var(--disabled-text);
+    background: var(--disabled-surface);
+  }
+
+  input[type="range"]:disabled::-moz-range-track {
+    border-color: var(--border);
+    background: var(--disabled-surface);
+  }
+
+  input[type="range"]:disabled::-moz-range-thumb {
+    border-color: var(--disabled-text);
+    background: var(--disabled-surface);
+  }
+
+  @keyframes drop-shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-4px); }
+    75% { transform: translateX(4px); }
+  }
+
+  .drop-target-shake {
+    animation: drop-shake 0.3s ease;
+    border-color: var(--destructive);
+  }
+
+  @media (max-width: 20rem) {
+    [data-slot="tooltip-content"] {
+      inset-inline-end: 0;
+      inset-inline-start: 0;
+      inline-size: auto;
+    }
+  }
+}

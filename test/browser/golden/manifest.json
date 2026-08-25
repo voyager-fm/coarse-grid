@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "description": "Canonical Chromium golden PNG manifest for cross-browser comparison",
+  "fixtures": {
+    "multicolor-gradient-default": {
+      "description": "8x4 multicolor gradient, default config",
+      "width": 8,
+      "height": 4,
+      "sha256": "PLACEHOLDER"
+    },
+    "directional-probe-rib-fringe": {
+      "description": "64x64 directional probe, rib+fringe config",
+      "width": 64,
+      "height": 64,
+      "sha256": "PLACEHOLDER"
+    }
+  }
+}
