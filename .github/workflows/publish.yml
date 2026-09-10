@@ -36,9 +36,9 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: Build core package
-        run: pnpm --filter @voyager-labs/coarse-grid-core build
+        run: pnpm --filter @voyager-fm/coarse-grid-core build
 
       - name: Publish core package to GitHub Packages
-        run: pnpm --filter @voyager-labs/coarse-grid-core publish --no-git-checks
+        run: pnpm --filter @voyager-fm/coarse-grid-core publish --no-git-checks
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

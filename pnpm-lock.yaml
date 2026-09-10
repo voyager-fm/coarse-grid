@@ -8,7 +8,7 @@ importers:
 
   .:
     dependencies:
-      '@voyager-labs/coarse-grid-core':
+      '@voyager-fm/coarse-grid-core':
         specifier: workspace:*
         version: link:packages/core
       class-variance-authority:

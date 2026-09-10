@@ -1,5 +1,5 @@
 /**
- * index.ts — public entry of @voyager-labs/coarse-grid-core
+ * index.ts — public entry of @voyager-fm/coarse-grid-core
  *
  * Runtime surface is IDENTICAL to the pre-TypeScript entry (same symbols, same
  * aliases, including the `createRasterFilter` alias of `createGpuFilter`); the

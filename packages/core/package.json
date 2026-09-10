@@ -1,13 +1,13 @@
 {
-  "name": "@voyager-labs/coarse-grid-core",
-  "version": "1.0.0",
+  "name": "@voyager-fm/coarse-grid-core",
+  "version": "1.0.1",
   "description": "Coarse Grid GPU raster-filter engine (WebGL2/regl) with filter params, edit history, and preset store",
-  "author": "voyager-labs",
+  "author": "voyager-fm",
   "type": "module",
   "license": "GPL-3.0",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/voyager-labs/coarse-grid.git",
+    "url": "git+https://github.com/voyager-fm/coarse-grid.git",
     "directory": "packages/core"
   },
   "engines": {

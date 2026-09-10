@@ -5,11 +5,11 @@
   "license": "GPL-3.0",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/voyager-labs/coarse-grid.git"
+    "url": "git+https://github.com/voyager-fm/coarse-grid.git"
   },
-  "homepage": "https://voyager-labs.github.io/coarse-grid/",
+  "homepage": "https://voyager-fm.github.io/coarse-grid/",
   "bugs": {
-    "url": "https://github.com/voyager-labs/coarse-grid/issues"
+    "url": "https://github.com/voyager-fm/coarse-grid/issues"
   },
   "type": "module",
   "packageManager": "pnpm@11.22.0",
@@ -30,7 +30,7 @@
     "test": "pnpm run check && pnpm run test:unit && pnpm run build && pnpm run test:browser"
   },
   "dependencies": {
-    "@voyager-labs/coarse-grid-core": "workspace:*",
+    "@voyager-fm/coarse-grid-core": "workspace:*",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "lucide-react": "^1.33.0",

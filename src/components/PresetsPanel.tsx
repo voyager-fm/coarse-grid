@@ -2,7 +2,7 @@ import { useRef, useState, type FormEvent } from 'react';
 
 import { Dialog as DialogPrimitive } from 'radix-ui';
 
-import { presetFilename } from '@voyager-labs/coarse-grid-core';
+import { presetFilename } from '@voyager-fm/coarse-grid-core';
 
 import { usePresets } from '@/hooks/usePresets';
 import type { UseFilterEditorResult } from '@/hooks/useFilterEditor';

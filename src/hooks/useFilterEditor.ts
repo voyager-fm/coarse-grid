@@ -8,12 +8,12 @@ import {
   normalizeFilterParams,
   type EditHistoryAPI,
   type FilterParamKey,
-} from '@voyager-labs/coarse-grid-core';
+} from '@voyager-fm/coarse-grid-core';
 
 import { CONTROL_COPY, type ControlGroup } from '@/lib/control-copy';
 
-export type { FilterParams } from '@voyager-labs/coarse-grid-core';
-import type { FilterParams } from '@voyager-labs/coarse-grid-core';
+export type { FilterParams } from '@voyager-fm/coarse-grid-core';
+import type { FilterParams } from '@voyager-fm/coarse-grid-core';
 
 // Only range sliders capture/consume a gesture baseline (mirrors script.js:
 // the range `input`/`change` pair). Checkbox/color changes always commit from
@@ -68,7 +68,7 @@ export interface UseFilterEditorResult {
 }
 
 /**
- * React state hook wrapping `@voyager-labs/coarse-grid-core` edit-history + filter-params.
+ * React state hook wrapping `@voyager-fm/coarse-grid-core` edit-history + filter-params.
  *
  * Replicates the vanilla script.js transaction semantics exactly:
  *  - range `input`  → `previewEdit` (live preview, NO history commit)

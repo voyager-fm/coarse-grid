@@ -7,7 +7,7 @@ import {
   listPresets as coreListPresets,
   loadPreset as coreLoadPreset,
   savePreset as coreSavePreset,
-} from '@voyager-labs/coarse-grid-core';
+} from '@voyager-fm/coarse-grid-core';
 
 import type { FilterParams } from '@/hooks/useFilterEditor';
 
@@ -52,7 +52,7 @@ export interface UsePresetsResult {
 }
 
 /**
- * React wrapper around `@voyager-labs/coarse-grid-core` preset-store. All preset-store
+ * React wrapper around `@voyager-fm/coarse-grid-core` preset-store. All preset-store
  * functions already swallow storage failures and return `{ok:false,error}`
  * (or `[]` for list) — this hook surfaces those as a recoverable English
  * status the PresetsPanel renders into `#preset-status`. It does NOT auto-apply

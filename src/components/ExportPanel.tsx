@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react';
 
-import { EXPORT_SCALES, PRODUCT_LIMITS, getExportDimensions, validateRenderDimensions } from '@voyager-labs/coarse-grid-core';
+import { EXPORT_SCALES, PRODUCT_LIMITS, getExportDimensions, validateRenderDimensions } from '@voyager-fm/coarse-grid-core';
 
 export interface RendererCapabilitiesLike {
   maxTextureSize: number;

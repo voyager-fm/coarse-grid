@@ -33,19 +33,19 @@ Opening `index.html` directly over `file://` is not supported. Serve the app thr
 
 ## Install the core package
 
-The GPU engine behind Coarse Grid is published as `@voyager-labs/coarse-grid-core` on GitHub Packages, so you can reuse the renderer in your own project without cloning this monorepo. Prefer to see it running first? The full app is live on GitHub Pages at [https://voyager-labs.github.io/coarse-grid/](https://voyager-labs.github.io/coarse-grid/).
+The GPU engine behind Coarse Grid is published as `@voyager-fm/coarse-grid-core` on GitHub Packages, so you can reuse the renderer in your own project without cloning this monorepo. Prefer to see it running first? The full app is live on GitHub Pages at [https://voyager-fm.github.io/coarse-grid/](https://voyager-fm.github.io/coarse-grid/).
 
-GitHub Packages requires authentication even for public packages. Create a classic personal access token with the `read:packages` scope, or rely on the built-in `GITHUB_TOKEN` in CI. Then point the `@voyager-labs` scope at the registry in your project's `.npmrc`:
+GitHub Packages requires authentication even for public packages. Create a classic personal access token with the `read:packages` scope, or rely on the built-in `GITHUB_TOKEN` in CI. Then point the `@voyager-fm` scope at the registry in your project's `.npmrc`:
 
 ```ini
-@voyager-labs:registry=https://npm.pkg.github.com
+@voyager-fm:registry=https://npm.pkg.github.com
 //npm.pkg.github.com/:_authToken=YOUR_GITHUB_TOKEN
 ```
 
 Install the package:
 
 ```sh
-npm install @voyager-labs/coarse-grid-core
+npm install @voyager-fm/coarse-grid-core
 ```
 
 ## Usage
@@ -173,7 +173,7 @@ Image files and pixels are never uploaded or transmitted to an external server. 
 Coarse Grid is a pnpm workspaces monorepo with two parts:
 
 - **Root app** (`index.html`, `src/`, Vite build): the React playground. It owns the file upload, the expert-controls editor, presets, the edit-history surface, the preview workspace, and PNG download.
-- **`packages/core`** (`@voyager-labs/coarse-grid-core`): the reusable GPU renderer and supporting modules. It exposes the GPU renderer, filter parameter definitions and normalization, edit history, and the preset store, with no UI or DOM of its own.
+- **`packages/core`** (`@voyager-fm/coarse-grid-core`): the reusable GPU renderer and supporting modules. It exposes the GPU renderer, filter parameter definitions and normalization, edit history, and the preset store, with no UI or DOM of its own.
 
 The core package is organized into six modules:
 
@@ -186,11 +186,11 @@ The core package is organized into six modules:
 | `edit-history.ts` | Immutable edit history (100-state limit, undo/redo) |
 | `preset-store.ts` | LocalStorage preset save/load/export/import |
 
-The React app imports this surface from `@voyager-labs/coarse-grid-core` through the workspace symlink, keeping all GPU and parameter logic out of the UI layer.
+The React app imports this surface from `@voyager-fm/coarse-grid-core` through the workspace symlink, keeping all GPU and parameter logic out of the UI layer.
 
 ## Development
 
-The repo is a pnpm workspaces monorepo. See [CONTRIBUTING.md](CONTRIBUTING.md) for setup and contribution guidance. The engine package `@voyager-labs/coarse-grid-core` is TypeScript executed natively by Node during development; `pnpm --filter @voyager-labs/coarse-grid-core build` produces its `dist/` build locally, which is what gets packaged when the core package is published.
+The repo is a pnpm workspaces monorepo. See [CONTRIBUTING.md](CONTRIBUTING.md) for setup and contribution guidance. The engine package `@voyager-fm/coarse-grid-core` is TypeScript executed natively by Node during development; `pnpm --filter @voyager-fm/coarse-grid-core build` produces its `dist/` build locally, which is what gets packaged when the core package is published.
 
 ```sh
 pnpm run check
