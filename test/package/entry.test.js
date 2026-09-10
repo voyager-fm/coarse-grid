@@ -6,7 +6,7 @@ import {
   computeBlockSize,
   createRasterFilter,
   normalizeFilterParams,
-} from '@voyager-labs/coarse-grid-core';
+} from '@voyager-fm/coarse-grid-core';
 
 test('published package entry exposes the raster filter renderer contract', () => {
   assert.equal(typeof createRasterFilter, 'function');

@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import type { ChangeEvent, FormEvent, KeyboardEvent as ReactKeyboardEvent } from 'react';
 
-import type { ControlDefinition, RangeControlDefinition } from '@voyager-labs/coarse-grid-core';
+import type { ControlDefinition, RangeControlDefinition } from '@voyager-fm/coarse-grid-core';
 
 import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip';
 
